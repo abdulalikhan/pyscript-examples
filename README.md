@@ -1,14 +1,14 @@
-# PyScript Examples
+# PyScript Examples :rocket: :snake:
 
 Useful examples built using the PyScript Framework
 
-## What is PyScript?
+## What is PyScript? :monocle_face:
 
 From [PyScript's website](https://pyscript.net/):
 
 > PyScript is a framework that allows users to create rich Python applications in the browser using HTML’s interface.
 
-## About this repo
+## About this repo :toolbox:
 
 Currently contains the following examples built with PyScript:
 
