@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Fun Fact App</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+    - paths:
+      - ./utils.py
+    </py-env>
+  </head>
+
+  <body class="container">
+  <py-script src="./funfact.py">  </py-script>
+
+  <main class="mx-auto mt-4">
+    <section>
+    
+    <div class="text-center w-full mb-8 mt-8">
+      <h1 class="text-3xl font-bold text-gray-800 uppercase tracking-tight">Learn a Fun Fact! 🎉</h1>
+    </div>
+    <div class="text-center w-full mb-8">
+      <button id="new-fact-btn" class="text-2xl p-2 text-white bg-blue-600 border border-blue-600 rounded" type="submit" pys-onClick="generate_funfact">
+        Click Here 🎊
+      </button>
+    </div>
+  
+    <div id="fun-fact-container" class="text-center w-full mt-4">
+    </div>
+  
+    </section>
+  </main>
+  </body>
+</html>
