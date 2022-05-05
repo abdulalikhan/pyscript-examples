@@ -13,7 +13,9 @@ From [PyScript's website](https://pyscript.net/):
 Currently contains the following examples built with PyScript:
 
 - Hash Generator :closed_lock_with_key: :gear:
-  Demonstrates usage of Python's HashLib library to generate MD5, SHA224, SHA256, SHA384, and BLAKE2 hashes fed from a text field.
+
+  Demonstrates usage of Python's [HashLib](https://docs.python.org/3/library/hashlib.html) library to generate MD5, SHA224, SHA256, SHA384, and BLAKE2 hashes fed from a text field.
 
 - Fun Fact App :triangular_ruler:
+
   Fetches a random fun fact from [aakhilv's free-to-use API](https://api.aakhilv.me/) and displays it when the user clicks a button.
