@@ -14,12 +14,12 @@ Currently contains the following examples built with PyScript:
 
 ### Hash Generator :closed_lock_with_key: :gear:
 
-![Hash Generator](https://raw.githubusercontent.com/abdulalikhan/pyscript-examples/main/images/hashgenerator.gif)
-
 Demonstrates usage of Python's [HashLib](https://docs.python.org/3/library/hashlib.html) library to generate MD5, SHA224, SHA256, SHA384, and BLAKE2 hashes fed from a text field.
+
+![Hash Generator](https://raw.githubusercontent.com/abdulalikhan/pyscript-examples/main/images/hashgenerator.gif)
 
 ### Fun Fact App :triangular_ruler:
 
-![Fun Fact App](https://raw.githubusercontent.com/abdulalikhan/pyscript-examples/main/images/funfactapp.gif)
-
 Fetches a random fun fact from [aakhilv's free-to-use API](https://api.aakhilv.me/) and displays it when the user clicks a button.
+
+![Fun Fact App](https://raw.githubusercontent.com/abdulalikhan/pyscript-examples/main/images/funfactapp.gif)
