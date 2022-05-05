@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Hash Generator</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+    - paths:
+      - ./utils.py
+    </py-env>
+  </head>
+
+  <body class="container bg-black">
+  <py-script src="./gen.py">
+  </py-script>
+
+  <main class="mx-auto mt-4">
+    <section>
+    
+    <div class="text-center w-full mb-8 mt-8">
+      <h1 class="text-3xl font-bold text-green-300 tracking-tight">Hash Generator 🔒</h1>
+    </div>
+
+    <div class="text-center w-full mb-8">
+      <input id="text-content" class="border flex-1 mr-3 border-green-300 p-2 rounded" type="text">
+      <select id="hash-method" class="border flex-1 mr-3 border-green-300 p-2 rounded">
+        <option value="md5" selected>MD5</option>
+        <option value="sha224">SHA224</option>
+        <option value="sha256">SHA256</option>
+        <option value="sha384">SHA384</option>
+        <option value="blake2">BLAKE2</option>
+      </select>
+      <button id="generate-btn" class="p-2 text-white bg-green-500 border border-green-600 rounded" type="submit" pys-onClick="generate_hash">
+        Generate
+      </button>
+    </div>
+  
+    <div id="hash-container" class="text-center text-white w-full mt-4">
+    </div>
+  
+    </section>
+  </main>
+  </body>
+</html>
