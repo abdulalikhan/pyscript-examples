@@ -12,6 +12,12 @@ From [PyScript's website](https://pyscript.net/):
 
 Currently contains the following examples built with PyScript:
 
+### Password Generator with PyScript :key: :gear:
+
+Generates secure variable length passwords composed of uppercase/lowercase letters, symbols and numbers based on the user's inputs.
+
+![Password Generator](https://raw.githubusercontent.com/abdulalikhan/pyscript-examples/main/images/passwordgenerator.png)
+
 ### Hash Generator :closed_lock_with_key: :gear:
 
 Demonstrates usage of Python's [HashLib](https://docs.python.org/3/library/hashlib.html) library to generate MD5, SHA224, SHA256, SHA384, and BLAKE2 hashes fed from a text field.
