@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Password Generator with PyScript</title>
+      
+      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+      
+      <style>
+         body {
+         font-family:roboto;
+         background-color: #fcfcfc;
+         padding-top: 55px;
+         min-height: 100vh;
+         margin:0;
+         display:flex;
+         flex-direction:column;
+         }
+      </style>
+   
+   </head>
+   <body>
+      <py-script>
+
+from js import document,alert
+import random
+
+def run(*ags, **kws):
+    newPassword = ""
+    pwdLength = document.getElementById('pwdLength').value
+    symbolsCheck = document.getElementById('symbols').checked
+    numbersCheck = document.getElementById('numbers').checked
+    lowercaseCheck = document.getElementById('lowercase').checked
+    uppercaseCheck = document.getElementById('uppercase').checked
+    
+    symbols = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '.', '/', ',', '{', '}', ';', ':']
+    
+    numbers = []
+    for i in range(10):
+        numbers.append(str(i))
+
+    lowercase = []
+    for i in range(97, 123):
+        lowercase.append(chr(i))
+
+    uppercase = []
+    for i in range(65, 91):
+        uppercase.append(chr(i))
+    
+    if (symbolsCheck == False and numbersCheck == False and lowercaseCheck == False and uppercaseCheck == False):
+        alert("Please select at least one option.")
+    else:
+        for i in range(int(pwdLength)):
+          chars = []
+          if (symbolsCheck):
+            chars.append(random.choice(symbols))
+          if (numbersCheck):
+            chars.append(random.choice(numbers))
+          if (lowercaseCheck):
+            chars.append(random.choice(lowercase))
+          if (uppercaseCheck):
+            chars.append(random.choice(uppercase))
+          newPassword += random.choice(chars)
+        pyscript.write("password", newPassword)
+      </py-script>
+      <div class="container">
+         <h1 class="text-center">
+            Password Generator
+            <small class="text-muted">with <a href="https://pyscript.net/" target="_blank"><b>PyScript</b></a></small>
+         </h1>
+         <br />
+         <p>
+         <h4>Password length</h4>
+         <select id="pwdLength" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="11">11</option>
+           <option value="12">12</option>
+           <option value="13">13</option>
+           <option value="14">14</option>
+           <option value="15">15</option>
+           <option value="16">16</option>
+           <option value="24">24</option>
+           <option value="32">32</option>
+           <option value="48">48</option>
+           <option value="64">64</option>
+           <option value="76">76</option>
+           <option value="100">100</option>
+           <option value="128">128</option>
+           <option value="256">256</option>
+           <option value="512">512</option>
+           <option value="1024">1024</option>
+         </select>
+         </p>
+            <div class="form-check form-check-inline">
+            <input id="symbols" name="symbols" type="checkbox" class="form-check-input" />
+            <label for="symbols" class="form-check-label">Symbols?</label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input id="numbers" name="numbers" type="checkbox" class="form-check-input" />
+            <label for="numbers" class="form-check-label">Numbers?</label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input id="lowercase" name="lowercase" type="checkbox" class="form-check-input" />
+            <label for="lowercase" class="form-check-label">Lowercase?</label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input id="uppercase" name="uppercase" type="checkbox" class="form-check-input" />
+            <label for="uppercase" class="form-check-label">Uppercase?</label>
+            </div>
+         <br /> <br />
+         <button id="generate" type="submit" class="btn btn-primary" pys-onClick="run">Generate Password</button>
+         <br /><br />
+         <p>
+         <h4>Your password</h4>
+         <textarea id="password" class="form-control" rows="4" aria-label="Large" aria-describedby="inputGroup-sizing-sm"></textarea>
+         </p>
+      </div>
+   </body>
+</html>
